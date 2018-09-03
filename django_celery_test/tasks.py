@@ -24,8 +24,8 @@ def xsum(numbers):
     return sum(numbers)
 
 
-@periodic_task(run_every=(crontab(minute='*/1')), name="add_every_monday_morning")
-def add_every_monday_morning():
+@periodic_task(run_every=(crontab(minute='*/1')), name="run_every_minute")
+def run_every_minute():
     current_date = datetime.now()
     last_date = current_date - timedelta(days=7)
     date = current_date.strftime("%b %d, %Y")
